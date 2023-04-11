@@ -41,6 +41,7 @@ public function putJoueur(Request $request)
         'id_joueur' => 'required|numeric',        
         'pseudo' => 'required|string',
         'email' => 'required|email',
+        'img' => 'required|string',
          ]);
 
 
@@ -54,6 +55,7 @@ public function putJoueur(Request $request)
     
     $joueur->pseudo = $request->pseudo;
     $joueur->email = $request->email;
+    $joueur->img = $request->img;
 
     $ok = $joueur->save();
     if ($ok) {
@@ -85,6 +87,7 @@ public function inscriptionJoueur(Request $request)
         'pseudo' => 'required|string',
         'email' => 'required|email',
         'mdp' => 'required|string',
+        'img' => 'required|string',
          ]);
 
 
@@ -100,6 +103,7 @@ public function inscriptionJoueur(Request $request)
     $joueur->email = $request->email;
     $joueur->mdp = $request->mdp;
     $joueur->win = 0;
+    $joueur->img = $request->img;
     $joueur->admin = 0;
     $ok = $joueur->save();
     if ($ok) {
