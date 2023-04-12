@@ -19,7 +19,17 @@ public function listMembre($id_equipe){
     ->join("Appartenir_a_une_equipe","Joueur.id_joueur","=","Appartenir_a_une_equipe.id_joueur")
     ->where('id_equipe','=',$id_equipe) -> get();
     return response()->json($membre);
-}   
+}  
+
+//Etre dans l equipe
+public function equipeIn($id_joueur){
+    
+    
+    $equipe = DB::table("Equipe")
+    ->join("Appartenir_a_une_equipe","Equipe.id_equipe","=","Appartenir_a_une_equipe.id_equipe")
+    ->where('id_joueur','=',$id_joueur) -> get();
+    return response()->json($equipe);
+}  
     
 //Rejoindre equipe
 public function rejoindreEquipe(Request $request)

@@ -74,6 +74,8 @@ Route::post('/appartenir', [App\Http\Controllers\Appartenir_a_une_equipeControll
 
 Route::delete('/appartenir/equipe/{id_equipe}/joueur/{id_joueur}', [App\Http\Controllers\Appartenir_a_une_equipeController::class, 'deleteMembre']);
 
+Route::get('/appartenir/equipe/{id_joueur}', [App\Http\Controllers\Appartenir_a_une_equipeController::class, 'equipeIn']);
+
 
 
 
